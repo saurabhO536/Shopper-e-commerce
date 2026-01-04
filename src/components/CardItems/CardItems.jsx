@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import crossIcon from "../../assets/cart_cross_icon.png";
+import crossIcon from "../../assets/cart_CROSS_icon.png";
 import { ShopContext } from '../Context/ShopContext'
 import './CardItems.css'
 
