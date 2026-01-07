@@ -1,16 +1,16 @@
-import React, { useContext, useEffect, useState } from 'react'
-import logo from '../../assets/logo.png'
-import cart_icon from '../../assets/cart_icon.png'
-import { Link, useNavigate } from 'react-router-dom'
-import { ShopContext } from '../Context/ShopContext'
-import { toast } from 'react-toastify'
+
+import React, { useContext, useEffect, useState } from "react";
+import logo from "../../assets/logo.png";
+import cart_icon from "../../assets/cart_icon.png";
+import { Link, useNavigate } from "react-router-dom";
+import { ShopContext } from "../Context/ShopContext";
+import { toast } from "react-toastify";
+import { Button } from "../ui/button";
+
 
 const Navbar = () => {
-
-  let[menu,setMenu] = useState("Shop")
-
-  let {getTotalItem} = useContext(ShopContext);
-  
+  const [menu, setMenu] = useState("shop");
+  const { getTotalItem } = useContext(ShopContext);
   const navigate = useNavigate();
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -29,50 +29,97 @@ const Navbar = () => {
   const logout = () => {
     localStorage.removeItem("isLoggedIn");
     localStorage.removeItem("username");
-
     setIsLoggedIn(false);
     setUsername("");
     toast.info("Logged out successfully");
-
     navigate("/login");
   };
 
-  // const isLoggedIn = localStorage.getItem("isLoggedIn");
-
-  // const logout = () => {
-  //   localStorage.removeItem("isLoggedIn"); // 👈 remove login
-  //   navigate("/login");
-  // };
-
   return (
-  <>
-    <div className='navbar'>
-      <div className='nav-logo'>
-        <img src={logo} alt="" />
-        <Link to={'/'} className='name' style={{textDecoration:"none"} }>SHOPPER </Link>
+    <nav className="sticky top-0 z-10 bg-white shadow-[0px_1px_3px_-2px_black]">
+      <div className="flex flex-col lg:flex-row items-center justify-around gap-5 p-3">
+
+        {/* Logo */}
+        <div className="flex flex-col sm:flex-row items-center gap-2.5">
+          <img src={logo} alt="logo" className="w-10 h-10" />
+          <Link
+            to="/"
+            className="text-2xl sm:text-3xl lg:text-4xl font-semibold
+                       bg-gradient-to-r from-red-500 to-black
+                       bg-clip-text text-transparent"
+          >
+            SHOPPER
+          </Link>
+        </div>
+
+        {/* Menu */}
+        <ul
+          className="flex flex-col sm:flex-row flex-wrap
+                     items-center justify-center gap-4 sm:gap-6 lg:gap-8"
+          onClick={() => window.scrollTo(0, 0)}
+        >
+          {["shop", "mens", "womens", "kids"].map((item) => (
+            <li
+              key={item}
+              onClick={() => setMenu(item)}
+              className="text-lg sm:text-xl lg:text-2xl font-normal cursor-pointer flex flex-col items-center"
+            >
+              <Link
+                to={item === "shop" ? "/" : `/${item}`}
+                className="text-black no-underline"
+              >
+                {item.charAt(0).toUpperCase() + item.slice(1)}
+              </Link>
+              {menu === item && (
+                <hr className="mt-1 h-[3px] w-[85%] rounded-full bg-blue-900" />
+              )}
+            </li>
+          ))}
+        </ul>
+
+        {/* Cart + Auth */}
+        <div className="flex flex-col sm:flex-row items-center gap-4 relative">
+
+          {isLoggedIn && (
+            <p className="text-sm sm:text-base">Welcome, {username}</p>
+          )}
+
+          {!isLoggedIn && (
+            <Link to="/login">
+              <Button className="w-[150px] h-[50px] rounded-full border border-black bg-white text-black hover:bg-teal-300">
+                Login
+              </Button>
+            </Link>
+          )}
+
+          {isLoggedIn && (
+            <Button
+              onClick={logout}
+              className="w-[150px] h-[50px] rounded-full"
+            >
+              Logout
+            </Button>
+          )}
+
+          <div className="relative">
+            <Link to="/cart">
+              <img src={cart_icon} alt="cart" className="w-8 h-8" />
+            </Link>
+
+            <div
+              className="absolute -top-3 -right-3
+                         h-[22px] w-[22px]
+                         bg-red-600 text-white
+                         rounded-full flex items-center justify-center
+                         text-sm font-extrabold"
+            >
+              {getTotalItem()}
+            </div>
+          </div>
+        </div>
       </div>
-      <ul className='nav-list' onClick={()=>window.scrollTo(0,0)}>
-        <li onClick={()=>setMenu("shop")}><Link to={'/'} style={{textDecoration:"none", color: "black"} }>Shop </Link>{menu==="shop" ? <hr/> : <> </>} </li>
-        <li onClick={()=>setMenu("mens")}> <Link to={'/mens'} style={{textDecoration:"none", color: "black"}}>Men</Link> {menu==="mens" ? <hr/> : <></>}</li>
-        <li onClick={()=>setMenu("womens")}> <Link to={'/womens'} style={{textDecoration:"none", color: "black"}}>Women</Link> {menu==="womens" ? <hr/> : <></>}</li>
-        <li onClick={()=>setMenu("kids")}> <Link to={'/kids'} style={{textDecoration:"none", color: "black"}}>Kids</Link> {menu==="kids" ? <hr/> : <></>}</li>
-      </ul>
+    </nav>
+  );
+};
 
-      <div className='nav-cart'>
-        {isLoggedIn && <p >Welcome, {username}</p>}
-        {!isLoggedIn && (
-        <Link to={'/login'}><button>Login</button></Link>
-        )}
-        {isLoggedIn && (
-        <button onClick={logout}>Logout</button>
-        )}
-        <Link to={'/cart'}><img src={cart_icon} alt="" /></Link>
-        <div className='nav-cart-count'>{getTotalItem()}</div>
-      </div>
-
-    </div>
-    </>
-  )
-}
-
-export default Navbar
+export default Navbar;
