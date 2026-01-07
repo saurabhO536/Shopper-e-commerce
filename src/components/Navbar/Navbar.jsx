@@ -43,7 +43,7 @@ const Navbar = () => {
           <Link
             to="/"
             className="text-2xl sm:text-3xl lg:text-4xl font-semibold
-                       bg-linear-to-r from-red-500 to-black
+                       bg-gradient-to-r from-red-500 to-black
                        bg-clip-text text-transparent"
           >
             SHOPPER
@@ -69,7 +69,7 @@ const Navbar = () => {
                 {item.charAt(0).toUpperCase() + item.slice(1)}
               </Link>
               {menu === item && (
-                <hr className="mt-1 h-0.75 w-[85%] rounded-full bg-blue-900" />
+                <hr className="mt-1 h-[3px] w-[85%] rounded-full bg-blue-900" />
               )}
             </li>
           ))}
@@ -84,7 +84,7 @@ const Navbar = () => {
 
           {!isLoggedIn && (
             <Link to="/login">
-              <Button className="w-37.5 h-12.5 rounded-full border border-black bg-white text-black hover:bg-teal-300">
+              <Button className="w-[150px] h-[50px] rounded-full border border-black bg-white text-black hover:bg-teal-300">
                 Login
               </Button>
             </Link>
@@ -93,7 +93,7 @@ const Navbar = () => {
           {isLoggedIn && (
             <Button
               onClick={logout}
-              className="w-37.5 h-12.5 rounded-full"
+              className="w-[150px] h-[50px] rounded-full"
             >
               Logout
             </Button>
@@ -106,7 +106,7 @@ const Navbar = () => {
 
             <div
               className="absolute -top-3 -right-3
-                         h-5.5 w-5.5
+                         h-[22px] w-[22px]
                          bg-red-600 text-white
                          rounded-full flex items-center justify-center
                          text-sm font-extrabold"
