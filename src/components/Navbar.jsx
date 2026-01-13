@@ -1,11 +1,11 @@
 
 import React, { useContext, useEffect, useState } from "react";
-import logo from "../../assets/logo.png";
-import cart_icon from "../../assets/cart_icon.png";
+import logo from "../assets/logo.png";
+import cart_icon from "../assets/cart_icon.png";
 import { Link, useNavigate } from "react-router-dom";
-import { ShopContext } from "../Context/ShopContext";
+import { ShopContext } from "./Context/ShopContext";
 import { toast } from "react-toastify";
-import { Button } from "../ui/button";
+import { Button } from "./ui/button";
 
 
 const Navbar = () => {
@@ -45,7 +45,7 @@ const Navbar = () => {
           <Link
             to="/"
             className="text-2xl sm:text-3xl lg:text-4xl font-semibold
-                       bg-gradient-to-r from-red-500 to-black
+                       bg-linear-to-r from-red-500 to-black
                        bg-clip-text text-transparent"
           >
             SHOPPER
@@ -71,7 +71,7 @@ const Navbar = () => {
                 {item.charAt(0).toUpperCase() + item.slice(1)}
               </Link>
               {menu === item && (
-                <hr className="mt-1 h-[3px] w-[85%] rounded-full bg-blue-900" />
+                <hr className="mt-1 h-0.75 w-[85%] rounded-full bg-blue-900" />
               )}
             </li>
           ))}
@@ -86,7 +86,7 @@ const Navbar = () => {
 
           {!isLoggedIn && (
             <Link to="/login">
-              <Button className="w-[150px] h-[50px] rounded-full border border-black bg-white text-black hover:bg-teal-300">
+              <Button className="w-35.5 h-11.5  border border-black bg-white text-black hover:bg-teal-300">
                 Login
               </Button>
             </Link>
@@ -95,7 +95,7 @@ const Navbar = () => {
           {isLoggedIn && (
             <Button
               onClick={logout}
-              className="w-[150px] h-[50px] rounded-full"
+              className="w-37.5 h-12.5 rounded-full"
             >
               Logout
             </Button>
@@ -108,7 +108,7 @@ const Navbar = () => {
 
             <div
               className="absolute -top-3 -right-3
-                         h-[22px] w-[22px]
+                         h-5.5 w-5.5
                          bg-red-600 text-white
                          rounded-full flex items-center justify-center
                          text-sm font-extrabold"
