@@ -4,8 +4,8 @@ SHOPPER is a modern clothing e-commerce website where users can browse and order
 
 # ✅ Features :
 
-- 🔐 Authentication Auth0 
-The entire site is accessible. but users can sign up and log in.
+- 🔐 Authentication Auth0
+  The entire site is accessible. but users can sign up and log in.
 
 - 👕 Product Categories
 
@@ -23,8 +23,6 @@ The entire site is accessible. but users can sign up and log in.
 
 - 💳 Checkout System
 
-
-
 - View subtotal price and quantity of items
 
 - Apply discount coupons
@@ -33,11 +31,14 @@ The entire site is accessible. but users can sign up and log in.
 
 ## Folder Structure :
 
+# Clone Repo
 
-# Clone Repo 
 ```ts
+
 ```
+
 # Start Development :
+
 ```ts
 npm run dev (Recommended)
 or
@@ -45,7 +46,22 @@ yarn run dev
 or
 bun run dev
 ```
-# For Build 
+
+# For Build
+
 ```ts
 npm run build
+```
+
+# For husky
+
+```ts
+npx husky init
+
+```
+
+# For Format
+
+```ts
+npm run format
 ```

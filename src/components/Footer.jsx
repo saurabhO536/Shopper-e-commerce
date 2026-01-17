@@ -1,8 +1,14 @@
-import React from "react";
-import { FaTwitter, FaFacebookF, FaWhatsapp, FaInstagram, FaGithub } from "react-icons/fa";
+import React from 'react'
+import {
+  FaTwitter,
+  FaFacebookF,
+  FaWhatsapp,
+  FaInstagram,
+  FaGithub,
+} from 'react-icons/fa'
 
 // ✅ If you use React Router
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom'
 
 // ✅ If Next.js, use this instead:
 // import Link from "next/link";
@@ -11,7 +17,6 @@ export default function Footer() {
   return (
     <footer className="flex-auto  w-full bg-white border-t border-gray-200">
       <div className="max-w-6xl mx-auto px-4 py-10 flex flex-col items-center gap-6">
-        
         {/* Logo + Brand */}
         <div className="flex items-center gap-3">
           <div className="w-11 h-11 rounded-md bg-yellow-400 flex items-center justify-center">
@@ -105,5 +110,5 @@ export default function Footer() {
         </p>
       </div>
     </footer>
-  );
+  )
 }
