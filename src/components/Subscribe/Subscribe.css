@@ -1,51 +1,57 @@
-.subscribe{
-    width: 80%;
-    height: 400px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-    padding: 0px 140px;
-    background-image: linear-gradient(180deg, #ff62ff,#f98af9,#f98af9, white 60%);
-    gap: 30px;
+.subscribe {
+  width: 80%;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  padding: 0px 140px;
+  background-image: linear-gradient(
+    180deg,
+    #ff62ff,
+    #f98af9,
+    #f98af9,
+    white 60%
+  );
+  gap: 30px;
 }
-.subscribe h1{
-    color: black;
-    font-size: 47px;
-    font-weight: 600;
+.subscribe h1 {
+  color: black;
+  font-size: 47px;
+  font-weight: 600;
 }
-.subscribe p{
-    color: black;
-    font-size: 20px;
+.subscribe p {
+  color: black;
+  font-size: 20px;
 }
-.subscribe div{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: white;
-    width: 700px;
-    height: 70px;
-    border-radius: 80px;
-    border: 1px solid rgb(147, 137, 137);
+.subscribe div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  width: 700px;
+  height: 70px;
+  border-radius: 80px;
+  border: 1px solid rgb(147, 137, 137);
 }
-.subscribe input{
-    width: 500px;
-    margin-left: 30px;
-    border: none;
-    outline: none;
-    color: #1b1919;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 15px;
+.subscribe input {
+  width: 500px;
+  margin-left: 30px;
+  border: none;
+  outline: none;
+  color: #1b1919;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 15px;
 }
-.subscribe div button{
-    width: 200px;
-    height: 70px;
-    border: none;
-    outline: none;
-    background-color: black;
-    border-radius: 80px;
-    color: white;
-    cursor: pointer;
-    font-size: 15px;
+.subscribe div button {
+  width: 200px;
+  height: 70px;
+  border: none;
+  outline: none;
+  background-color: black;
+  border-radius: 80px;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
 }
