@@ -1,5 +1,6 @@
 import './App.css'
 import Navbar from './components/Navbar'
+
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Shop from './components/Pages/Shop'
 import Product from './components/Pages/Product'
@@ -12,6 +13,7 @@ import banner_women from '../src/assets/banner_women.png'
 import banner_kids from '../src/assets/banner_kids.png'
 import PageWrapper from './components/PageWrapper'
 import SignUp from './components/Pages/SignUp'
+
 
 function App() {
   return (
