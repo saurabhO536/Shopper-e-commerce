@@ -31,6 +31,38 @@ SHOPPER is a modern clothing e-commerce website where users can browse and order
 
 ## Folder Structure :
 
+```ts
+SHOPPER/
+├── .husky/                    # Git hooks (pre-commit, lint checks)
+├── dist/                      # Production build output
+├── node_modules/              # Installed dependencies
+├── public/                    # Static public assets
+├── src/                       # Main source code
+│   ├── assets/                # Images, icons, fonts
+│   ├── components/            # Reusable UI components
+│   ├── lib/                   # Utilities/helpers (shadcn utils, configs)
+│   ├── Pages/                 # App pages / route-based components
+│   ├── App.css                # Global app styles
+│   ├── App.jsx                # Root component
+│   ├── index.css              # Tailwind base styles
+│   ├── main.jsx               # Entry point
+│
+├── .gitignore                 # Git ignored files
+├── .nvmrc                     # Node version manager config
+├── .prettierignore            # Files ignored by Prettier
+├── .prettierrc                # Prettier config
+├── components.json            # shadcn/ui config
+├── eslint.config.js           # ESLint configuration
+├── index.html                 # HTML template
+├── package-lock.json          # Lock file
+├── package.json               # Dependencies and scripts
+├── README.md                  # Documentation
+├── tsconfig.app.json          # TS config (app)
+├── tsconfig.json              # Main TS config
+├── tsconfig.node.json         # TS config (node)
+└── vite.config.js             # Vite config
+```
+
 # Clone Repo
 
 ```ts
